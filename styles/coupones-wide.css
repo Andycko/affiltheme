@@ -1,0 +1,56 @@
+.coupones-wide {
+  width: 96%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 2rem;
+  margin: 2rem auto;
+  border: 2px solid #F0F0F0;
+  border-radius: 10px;
+  position: relative; }
+  .coupones-wide .ad-logo {
+    width: 160px;
+    height: auto;
+    margin: 0 auto; }
+    .coupones-wide .ad-logo:hover {
+      box-shadow: none; }
+    .coupones-wide .ad-logo img {
+      width: 160px; }
+  .coupones-wide .ad-head {
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 1.5rem auto 0 auto;
+    font-weight: bold; }
+    @media only screen and (max-width: 800px) {
+      .coupones-wide .ad-head {
+        font-size: 1.3rem; } }
+  .coupones-wide .ad-text {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0.5rem auto 1rem auto;
+    opacity: 0.7; }
+    @media only screen and (max-width: 800px) {
+      .coupones-wide .ad-text {
+        font-size: 1rem; } }
+  .coupones-wide .ad-button {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0 auto;
+    background: #d7212e;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    text-transform: uppercase;
+    transition: 0.3s ease; }
+    .coupones-wide .ad-button:hover {
+      transform: scale(1.04);
+      box-shadow: none; }
+  .coupones-wide .finehand {
+    position: absolute;
+    font-size: 3rem;
+    top: -3rem;
+    right: 1rem; }
+
+/*# sourceMappingURL=coupones-wide.css.map */

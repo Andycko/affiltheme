@@ -1,0 +1,344 @@
+@import "colors.sass"
+
+html
+  scroll-behavior: smooth
+
+*
+  scroll-margin-top: 4rem
+
+.main-header
+  height: auto
+  width: 100%
+
+  top: 0
+  left: 0
+  background: white
+  border-bottom: 1px solid $main-color-2
+  position: fixed
+  transition: .3s ease
+  display: flex
+  box-sizing: border-box
+  z-index: 1100
+  @media only screen and (max-width: 1100px)
+    overflow: hidden
+
+  .header-inner
+    width: calc(100% - 20px)
+    height: 100%
+
+    margin: 0 auto
+    display: flex
+    position: relative
+
+    .main-header-logo
+      height: 36px
+      width: auto
+      margin: 6px 2rem 0 0
+      padding: 6px 6px 6px 0
+      background: white
+      z-index: 1100
+
+      a
+        height: 100%
+        width: 100%
+        display: flex
+
+        img
+          height: 100%
+          width: auto
+          margin: auto auto auto 0
+
+    .header-main-menu
+      display: flex
+      height: 100%
+      margin: auto 0
+      transition: .2s ease
+      padding: .3rem 0
+      @media only screen and (max-width: 1100px)
+        position: absolute
+        height: 100vh
+        width: 100%
+        overflow-y: scroll
+        top: 0
+        left: 0
+        padding-top: 60px
+
+      ul
+        display: flex
+        list-style-type: none
+        padding: 0
+        flex-wrap: wrap
+        position: relative
+        height: 100%
+        background: white
+        margin: 0
+        @media only screen and (max-width: 1100px)
+          flex-direction: column
+          text-align: left
+          height: auto
+          width: calc(100% - 2rem)
+          max-width: 500px
+          margin: 2rem auto auto auto
+
+        li
+          margin: 0 .5rem 0 0
+          display: flex
+          height: 100%
+          @media only screen and (max-width: 1100px)
+            flex-direction: column
+            margin: 0
+            width: 100%
+
+          a
+            text-decoration: none
+            color: black
+            transition: .2s ease
+            margin: auto 0
+            padding: .4rem .6rem
+            @media only screen and (max-width: 1100px)
+              color: $main-color
+
+            &:hover
+              color: $main-color
+              background: $main-color-2
+            @media only screen and (max-width: 1100px)
+              background: $main-color-2
+              margin: 0 0 10px 0
+
+          &:hover > .sub-menu
+            visibility: visible!important
+            opacity: 1!important
+
+          & > .sub-menu
+            display: grid
+            grid-template-columns: 1fr
+            grid-gap: 5px
+            position: absolute
+            top: 100%
+            height: auto
+            padding: 1rem
+            border: 1px solid $main-color-2
+            width: 220px
+            box-sizing: border-box
+            opacity: 0
+            visibility: hidden
+            transition: .2s ease
+            @media only screen and (max-width: 1100px)
+              position: relative
+              opacity: 1
+              visibility: visible
+              border: none
+              margin: 0
+              padding: 0 0 0 1rem
+              width: 100%
+              grid-gap: 0
+
+            li
+              position: relative
+              width: 100%
+              height: auto
+              display: flex
+              box-sizing: border-box
+
+              a
+                height: auto
+                width: 100%
+                padding: .5rem 0 .5rem .5rem
+                box-sizing: border-box
+                &:hover
+                  background: $main-color-2
+
+              &:hover > .sub-menu
+                visibility: visible!important
+                opacity: 1!important
+
+              & > .sub-menu
+                position: absolute
+                left: calc(100% + 1rem)
+                top: -1rem
+                opacity: 0
+                visibility: hidden
+                transition: .2s ease
+                @media only screen and (max-width: 1100px)
+                  position: relative
+                  top: 0
+                  left: 0
+                  opacity: 1
+                  visibility: visible
+                  border: none
+                  padding: 0 0 0 10px
+                  grid-gap: 0
+
+    .aws-container
+      width: calc(100% - 50px)
+      right: 50px
+      top: 10px
+      max-width: 0
+      opacity: 0
+      transition: .4s ease
+      z-index: 1101
+      visibility: hidden
+
+      height: 40px
+      position: absolute
+
+      form
+        height: 40px
+        box-sizing: border-box
+
+    .header-right-options
+      height: 40px
+      width: auto
+
+      margin: 4px 0 4px auto
+      padding: 6px 0
+      background: white
+      z-index: 1100
+      display: flex
+
+      .main-header-search
+        width: 40px
+        height: 40px
+
+        display: flex
+        margin: auto 0 auto 1rem
+        transition: .2s ease
+        cursor: pointer
+        position: relative
+        &:hover
+          background: $main-color-2
+        @media only screen and (max-width: 1100px)
+          background: $main-color-2
+
+          img
+            transform: scale(1.1)
+
+        img
+          width: 20px
+          height: auto
+
+          margin: auto
+          transition: .2s ease
+          opacity: 1
+
+        .s-bread
+          width: 26px
+          height: 2px
+
+          background: $medium-grey
+          position: absolute
+          transition: .2s ease
+          opacity: 0
+
+        .s-top
+          top: 20px
+          left: 7px
+          transform: rotate(90deg)
+
+        .s-bot
+          bottom: 20px
+          left: 7px
+          transform: rotate(-90deg)
+
+      .sandwich
+        height: 40px
+        width: 40px
+
+        display: none
+        margin: auto 0 auto 1rem
+        transition: .2s ease
+        cursor: pointer
+        position: relative
+        &:hover
+          background: $main-color-2
+        @media only screen and (max-width: 1100px)
+          background: $main-color-2
+          margin: auto 0 auto 10px
+          display: flex
+
+        .bread
+          width: 26px
+          height: 2px
+
+          background: $medium-grey
+          position: absolute
+          transition: .3s ease
+
+        .top
+          top: 12px
+          left: 7px
+
+        .bot
+          bottom: 12px
+          left: 7px
+
+.main-header-open
+  height: 100%
+
+  .header-inner
+    width: calc(100% - 20px)
+    height: 100%
+
+    margin: 0 auto
+    display: flex
+
+    .header-right-options
+
+      .sandwich
+
+        .bread
+          width: 26px
+          height: 2px
+
+          background: $medium-grey
+          position: absolute
+
+        .top
+          top: 20px
+          left: 7px
+          transform: rotate(45deg)
+
+        .bot
+          bottom: 18px
+          left: 7px
+          transform: rotate(-45deg)
+
+.main-header-search
+
+  .header-inner
+
+    .header-main-menu
+      opacity: 0
+      visibility: hidden
+
+    .aws-container
+      max-width: 500px
+      opacity: 1
+      visibility: visible
+
+    .header-right-options
+
+      .sandwich
+        opacity: 0
+        width: 0
+        margin: 0
+
+      .main-header-search
+
+        img
+          opacity: 0
+
+        .s-bread
+          opacity: 1
+
+        .s-top
+          top: 20px
+          left: 7px
+          transform: rotate(45deg)
+
+        .s-bot
+          bottom: 18px
+          left: 7px
+          transform: rotate(-45deg)
+
+

@@ -1,0 +1,409 @@
+@import "colors.sass"
+
+// scroll indicator
+
+.progress
+  background: $main-color-4
+  position: fixed
+  z-index: 999
+  top: 60px
+  bottom: auto
+  left: 0
+  width: 0%
+  height: 5px
+
+.article-wrapper
+  height: auto
+  padding: 0 0 30px 0
+  margin: 0 auto
+  flex-direction: column
+  display: flex
+
+  .article-header
+    padding: 120px 0 4rem 0
+    margin-bottom: 30px
+    text-align: center
+    background: $base-grey
+    display: flex
+    flex-direction: column
+
+    .article-thumbnail
+      width: 90%
+      margin: 0 auto
+
+    img
+      max-width: 400px
+      height: auto
+      margin: auto
+      @media only screen and (max-width: 800px)
+        max-width: 400px
+
+    .article-header-head-wrap
+      display: flex
+      flex-direction: column
+
+      .article-header-head
+        width: 90%
+        margin: 0 auto
+        max-width: 800px
+        color: $main-color
+        font-size: 3rem
+        @media only screen and (max-width: 800px)
+          font-size: 2rem
+        @media only screen and (max-width: 600px)
+          font-size: 1.6rem
+
+      .article-date-wrap
+        display: flex
+        margin: 1rem auto 0 auto
+        width: auto
+        @media only screen and (max-width: 630px)
+          flex-direction: column
+          width: 100%
+
+        .date-separator
+          margin: auto 1rem
+          @media only screen and (max-width: 630px)
+            display: none
+
+        .page-blog-post-block-text-info
+          font-size: .8rem
+          margin: auto 0
+          @media only screen and (max-width: 630px)
+            margin: .2rem auto
+
+  .article-inner-wrap
+    display: grid
+    grid-gap: 1rem
+    grid-template-columns: 2fr 4fr 2fr
+    max-width: 1600px
+    margin: 0 auto
+    width: calc(100% - 20px)
+    @media only screen and (max-width: 1460px)
+      grid-template-columns: 1fr 3fr
+    @media only screen and (max-width: 1200px)
+      display: flex
+      flex-direction: column-reverse
+
+    .article-left
+      display: flex
+      flex-direction: column
+      width: 100%
+
+      .article-leftmenu-wrap
+        position: sticky
+        display: flex
+        top: 15px
+        width: 100%
+        @media only screen and (max-width: 1990px)
+          top: 90px
+
+        .article-leftmenu-inner
+          display: grid
+          grid-gap: 1rem
+          grid-template-columns: 1fr
+          width: 100%
+          height: auto
+          margin: 0 auto
+          max-width: 700px
+          z-index: 3
+          transition: .5s ease
+          @media only screen and (max-width: 1200px)
+            max-width: 800px
+            grid-template-columns: 1fr
+
+
+          .article-leftmenu-block
+            box-shadow: 0 0 30px rgba(0, 0, 0, .15)
+            background: white
+            border-radius: 10px
+            box-sizing: border-box
+            padding: 1.5rem 1rem
+            display: flex
+            flex-direction: column
+            width: 100%
+            z-index: -2
+            opacity: .3
+            transition: .3s ease
+            &:hover
+              opacity: 1
+            @media only screen and (max-width: 1200px)
+              opacity: 1
+              flex-wrap: wrap
+              flex-direction: row
+            @media only screen and (max-width: 700px)
+              flex-wrap: nowrap
+              flex-direction: column
+
+            .article-leftmenu-block-head
+              font-weight: bold
+              font-size: 1.1rem
+              margin: 0 auto .5rem 0
+              border-bottom: 2px solid black
+              width: 100%
+              box-sizing: border-box
+              padding: 0 0 .6rem 0
+              i
+                margin-right: .5rem
+              @media only screen and (max-width: 1200px)
+                width: 100%
+                text-align: center
+                font-size: 1.5rem
+                padding-bottom: 1rem
+              @media only screen and (max-width: 500px)
+                border: unset
+                padding-bottom: .5rem
+
+            .article-leftmenu-block-post
+              display: flex
+              margin: .8rem 0
+              width: 100%
+              position: relative
+              @media only screen and (max-width: 1200px)
+                width: 50%
+                flex-direction: column
+              @media only screen and (max-width: 700px)
+                width: 100%
+                flex-direction: row
+              @media only screen and (max-width: 500px)
+                flex-direction: column
+                border-radius: 10px
+                border: 2px solid $base-grey
+                padding: 1.5rem 1rem
+                box-sizing: border-box
+
+              .link-abs
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+
+              img
+                height: auto
+                width: 5rem
+                margin: auto
+                @media only screen and (max-width: 1200px)
+                  width: 50%
+                @media only screen and (max-width: 700px)
+                  width: 7rem
+                  padding: 0 1rem
+                @media only screen and (max-width: 500px)
+                  width: 10rem
+
+
+              li
+                margin: auto 0 auto .5rem!important
+                width: 100% !important
+                @media only screen and (max-width: 1200px)
+                  text-align: center
+                @media only screen and (max-width: 700px)
+                  text-align: left
+                  font-size: 1.2rem
+                @media only screen and (max-width: 500px)
+                  text-align: center
+                  border: unset!important
+
+            li
+              list-style-type: none
+              width: auto
+              margin: .5rem
+
+              position: relative
+              box-sizing: border-box
+              display: flex
+              &::before
+                content: ""
+                position: absolute
+                background: $medium-grey
+                left: 0
+                top: 0
+                height: 100%
+                width: 2px
+                transition: .2s ease
+                z-index: -1
+                @media only screen and (max-width: 1200px)
+                  top: 100%
+                  width: 100%
+                  height: 2px
+                  box-sizing: border-box
+                @media only screen and (max-width: 700px)
+                  top: 0
+                  width: 2px
+                  height: 100%
+                @media only screen and (max-width: 500px)
+                  display: none
+              &:hover
+                &::before
+                  width: 100%
+                  background: $light-grey
+                  @media only screen and (max-width: 1200px)
+                    height: 100%
+                    top: 0
+                  @media only screen and (max-width: 700px)
+                    width: 100%
+                    height: 100%
+              @media only screen and (max-width: 1200px)
+                width: 50%
+                margin: .5rem 0
+              @media only screen and (max-width: 500px)
+                border: 2px solid $base-grey
+                border-radius: 10px
+                width: 100%
+                text-align: center
+
+                a
+                  text-align: center
+
+              a
+                text-decoration: none
+                color: black
+                box-sizing: border-box
+                transition: .2s ease
+                position: relative
+                z-index: 5
+                padding: .6rem
+                width: 100%
+                margin: 0
+
+
+.article
+  width: 100%
+  margin: 0 auto
+  display: flex
+  flex-direction: column
+  max-width: 800px
+  @media only screen and (max-width: 1000px)
+    width: 100%
+    margin: 0 auto
+
+.article-content
+  max-width: 750px
+  margin: 20px auto
+  color: #808080
+  font-size: 1rem
+  display: flex
+  flex-direction: column
+
+  p
+    line-height: 2.1rem
+    font-size: 1.2rem
+
+  h2
+    color: $main-color
+    font-size: 2.4rem
+    margin: 2rem auto 1rem 0
+    position: relative
+    z-index: 2
+    width: auto
+    &::after
+      content: ""
+      z-index: -1
+      position: absolute
+      bottom: .5rem
+      left: -.5rem
+      width: calc( 30% + .5rem )
+      height: .5rem
+      background: $main-color-4
+
+  h3
+    color: $main-color
+    font-size: 1.8rem
+    margin: 1.5rem 0 1rem 0
+
+  h4
+    color: $main-color
+    font-size: 1.6rem
+    margin: 1.5rem 0 1rem 0
+
+  h5
+    color: $main-color
+    font-size: 1.2rem
+    margin: 1.5rem 0 1rem 0
+
+  a
+    color: $main-color
+    position: relative
+    z-index: 2
+    width: auto
+    text-decoration: none
+    box-shadow: inset 0 0 0 $main-color-4
+    transition: .2s ease
+    &:hover
+      box-shadow: inset 0 -0.9rem 0 $main-color-4
+
+  ul
+    margin: 1rem 0
+
+    li
+      line-height: 2.1rem
+      font-size: 1.2rem
+      margin: .5rem 0
+
+  ol
+    margin: 1rem 0
+
+    li
+      line-height: 2.1rem
+      font-size: 1.2rem
+      margin: .5rem 0
+
+  iframe
+    margin: auto!important
+
+
+
+  figure
+    width: auto
+    margin: 1rem 0
+    flex-direction: column
+    display: flex!important
+
+    figcaption
+      text-align: center
+      margin: .5rem 1rem
+      font-size: .7rem
+
+      a
+        transition: .3s
+
+    img
+      margin: auto
+      width: auto
+      max-width: 100%
+      height: auto
+
+  .half
+    img
+      width: 50%
+      height: auto
+      @media only screen and (max-width: 900px)
+        width: 70%
+      @media only screen and (max-width: 500px)
+        argin: auto
+        width: auto
+        max-width: 100%
+        height: auto
+
+
+@media only screen and (max-width: 800px)
+
+  .article
+    width: 100%
+
+  .article-header
+    padding-top: 100px
+
+  .article-thumbnail
+    border-radius: 0
+    width: 100%
+    img
+      width: 100%
+      height: auto
+
+  .article-content
+    width: calc(100% - 20px)
+    font-size: .9rem
+
+
+// Article left menu

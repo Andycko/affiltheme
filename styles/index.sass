@@ -1,0 +1,335 @@
+@import "colors.sass"
+
+.main-page-blog-top
+  width: 100%
+  display: flex
+  background: $base-grey
+
+  .main-page-blog-top-inner
+    display: grid
+    grid-template-columns: 1fr 1fr
+    width: calc(100% - 20px)
+    max-width: 1100px
+    margin: 5rem auto 2rem auto
+    @media only screen and (max-width: 1100px)
+      grid-template-columns: 1fr
+      grid-gap: 1rem
+
+    .main-page-blog-top-img
+      width: 70%
+      margin: auto
+      height: auto
+      @media only screen and (max-width: 1100px)
+        max-height: 300px
+        width: auto
+
+    .main-page-blog-top-head
+      margin: auto auto auto 0
+      font-size: 4rem
+      color: $main-color
+      @media only screen and (max-width: 1100px)
+        text-align: center
+        font-size: 3rem
+        margin: 0 auto
+        width: 90%
+      @media only screen and (max-width: 900px)
+        font-size: 2.6rem
+
+      .index-res-break-h1
+        display: none
+        @media only screen and (max-width: 1100px)
+          display: block
+
+
+
+
+.main-page-blog-inner
+  width: 95%
+  max-width: 1200px
+  display: flex
+  margin: 5rem auto auto auto
+  position: relative
+  flex-wrap: wrap
+
+  .most-recent-post
+    height: auto
+    margin-bottom: 3rem
+    @media only screen and (max-width: 1200px)
+      flex-direction: column
+    @media only screen and (max-width: 600px)
+      margin-bottom: 0
+
+    .page-blog-post-block-img
+      width: 60%
+      max-height: 210px
+      @media only screen and (max-width: 1200px)
+        width: calc(100% - 1rem)
+        min-height: 400px
+      @media only screen and (max-width: 1000px)
+        min-height: 300px
+      @media only screen and (max-width: 700px)
+        min-height: 250px
+      @media only screen and (max-width: 600px)
+        min-height: 220px
+
+    .page-blog-post-block-text
+      width: 40%
+      @media only screen and (max-width: 1200px)
+        width: calc(100% - 1rem)
+        margin-top: 1.2rem
+      @media only screen and (max-width: 600px)
+        margin-top: 0
+
+      .page-blog-post-block-text-head
+        font-size: 1.7rem
+        line-height: 2.4rem
+        max-height: unset
+        margin-top: auto
+        @media only screen and (max-width: 600px)
+          font-size: 1.3rem
+          line-height: 1.8rem
+
+      .page-blog-post-block-text-info
+        font-size: .8rem
+
+      p
+        margin-top: 1rem
+        margin-bottom: auto
+        font-size: 1rem
+        line-height: 1.5rem
+        @media only screen and (max-width: 600px)
+          font-size: 0.8rem
+          line-height: 1.3rem
+          margin: 5px auto 1rem auto
+
+
+
+  .main-page-blog-inner-left
+    width: 75%
+    height: auto
+    @media only screen and (max-width: 1000px)
+      width: 100%
+
+
+  .main-page-blog-inner-right
+    width: 25%
+    height: 100%
+
+.page-blog-post-block
+  display: flex
+  width: calc(100% - 4px)
+  height: auto
+  transition: .2s ease
+  margin-bottom: .5rem
+  cursor: pointer
+  text-decoration: none !important
+  border-radius: 5px
+  padding: 1.5rem 0
+  border: 2px solid rgba(0,0,0,0)
+  &:hover
+    border: 2px solid $main-color
+    background: $main-color-2
+    cursor: pointer !important
+
+.uvitaci-banner-blog
+  width: calc(100% - 1rem)
+  height: 350px
+  margin: 0 auto 2rem auto
+  border-radius: 5px
+  background-position: center !important
+  background-size: cover !important
+  display: flex
+  flex-direction: column
+  color: white
+  text-align: center
+
+.uvitaci-banner-blog-nadpis
+  font-size: 2.2rem
+  margin: auto auto 0 auto
+
+.uvitaci-banner-blog-podnadpis
+  font-size: 1.2rem
+  margin: 0 auto .2rem auto
+  font-weight: normal
+
+.uvitaci-banner-blog-text
+  font-size: .8rem
+  margin: .4rem auto auto auto
+  max-width: 50%
+
+.page-blog-post-block-img
+  width: calc(35% - 0.5rem)
+  height: 100%
+  margin-left: .5rem
+  display: flex
+  justify-content: center
+  align-items: center
+  img
+    object-fit: cover
+    max-height: 210px
+    max-width: 100%
+    width: auto
+    height: auto
+
+.page-blog-post-block-text
+  margin: auto .5rem auto 0
+  width: calc(65% - 0.5rem)
+  padding-left: 20px
+  height: 100%
+  display: flex
+  flex-direction: column
+
+.page-blog-post-block-text-head
+  color: $main-color
+  font-size: 1.6rem
+  line-height: 2.2rem
+  margin: auto 0 5px 0
+
+.page-blog-post-block-text-info
+  color: black
+  margin: 0
+  font-size: .7rem
+  font-weight: normal
+
+.page-blog-post-block-text p
+  margin: 5px 0 auto 0
+  font-size: .9rem
+  line-height: 1.3rem
+  overflow: hidden
+  color: black
+
+/*
+ *nic sa nenaslo
+
+.nic-sa-nenaslo-wrapper
+  width: 100%
+
+.nic-sa-nenaslo
+  margin: auto
+  width: 50%
+  max-width: 250px
+  text-align: center
+  font-size: 1rem
+  font-weight: bold
+  padding: 1rem 2rem
+  border: 2px solid black
+  color: black
+  border-radius: 5px
+
+@media only screen and (max-width: 600px)
+
+  .uvitaci-banner-blog
+    height: 35vh
+    width: 100%
+    border-radius: 0
+
+  .uvitaci-banner-blog-nadpis
+    font-size: 1.5rem
+    margin-left: auto
+    text-align: left
+
+  .uvitaci-banner-blog-podnadpis
+    margin: 0 auto auto auto
+    font-size: .9rem
+    text-align: left
+
+  .uvitaci-banner-blog-text
+    display: none
+
+  .page-blog-post-block
+    flex-direction: column
+    height: auto
+    padding: 0
+    border: none
+    background: none
+    &:hover
+      border: none
+      background: none
+
+  .page-blog-post-block-img
+    width: calc(100% - 1rem)
+    margin: 0 .5rem 0 .5rem
+    padding: 1rem
+    height: auto
+    border-radius: 5px 5px 0 0
+    border: 2px solid $base-grey
+    box-sizing: border-box
+
+  .page-blog-post-block-text
+    width: calc(100% - 1rem)
+    margin: 0 .5rem 0 .5rem
+    padding: 0 0 .5rem 0
+    border-radius: 0 0 5px 5px
+    border: 2px solid $base-grey
+    border-top: 0
+    box-sizing: border-box
+
+  .page-blog-post-block-text-head
+    font-size: 1.3rem
+    line-height: 1.8rem
+    width: 90%
+    margin: 1rem auto .5rem auto
+
+  .page-blog-post-block-text-info
+    width: 90%
+    margin-left: auto
+    margin-right: auto
+
+  .page-blog-post-block-text p
+    font-size: .8rem
+    line-height: 1.3rem
+    max-height: 6rem
+    width: 90%
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 1rem
+
+.screen-reader-text
+  display: none
+
+.pagination
+  width: 100%
+  margin: 20px 0
+  display: flex
+
+.nav-links
+  margin: auto
+  height: 40px
+  max-width: 90%
+  display: flex
+  border: 1px solid #808080
+  border-radius: 5px
+  box-sizing: border-box
+  color: #808080 !important
+  font-size: .9rem
+
+  a
+    text-decoration: none
+    color: #808080 !important
+
+  .prev
+    margin: auto
+    width: 80px !important
+    text-align: center
+    box-sizing: border-box
+    border: none !important
+
+  .next
+    margin: auto
+    width: 80px !important
+    text-align: center
+    border-left: 1px solid #808080
+    box-sizing: border-box
+
+  .page-numbers
+    width: 40px
+    margin: auto
+    text-align: center
+    border-left: 1px solid #808080
+    height: 100%
+    line-height: 40px
+    transition: .3s ease
+    cursor: pointer
+
+    &:hover
+      background-color: rgba(128, 128, 128, 0.2)

@@ -1,0 +1,131 @@
+$light-grey: #dcdcdc
+$medium-grey: #8f8f8f
+
+.content-area
+  padding: 60px 0 0 0
+  width: calc(100 - 20px)
+  margin: 0 10px
+  display: flex
+  flex-direction: column
+
+  .site-main
+    width: 100%
+    max-width: 1600px
+
+    margin: 50px auto 0 auto
+
+    .woocommerce-breadcrumb
+      font-size: .9rem
+
+      a
+        color: $medium-grey
+        transition: .2s ease
+        &:hover
+          color: black
+
+    .woocommerce-products-header
+      display: flex
+      flex-direction: column
+
+      h1
+        margin: 1rem auto
+        max-width: 800px
+        font-size: 2rem
+
+      .term-description
+        max-width: 800px
+        margin: 0 auto
+
+        p
+          font-size: 1rem
+          line-height: 1.7rem
+
+    .woocommerce-ordering
+      width: 100%
+      display: flex
+
+      .orderby
+        margin: 0 0 0 auto
+        height: 30px
+        box-sizing: border-box
+        padding: 0 1rem
+
+    .products
+      display: grid
+      grid-gap: 1.5rem
+      padding: 0
+      width: 100%
+      list-style-type: none
+      @media only screen and (max-width: 900px)
+        grid-gap: 1rem
+      @media only screen and (max-width: 700px)
+        grid-gap: 1rem
+      @media only screen and (max-width: 500px)
+        grid-gap: .5rem
+
+      li
+        position: relative
+        border: 1px solid $light-grey
+        box-sizing: border-box
+        padding: 1rem
+        transition: .2s ease
+        &:hover
+          box-shadow: 0 10px 30px rgba(0, 0, 0, .1)
+
+        a
+          width: 100%
+          text-decoration: none
+          color: black
+          display: flex
+          flex-direction: column
+          text-align: center
+
+          img
+            width: 60%
+            height: auto
+            margin: auto
+
+          h2
+            padding: .5rem 0
+            margin: 0
+            font-size: 1rem
+            font-weight: normal
+            width: 100%
+            background: white
+            transition: .2s ease
+            z-index: 2
+            @media only screen and (max-width: 700px)
+              font-size: .8rem
+
+          .price
+            width: 100%
+            background: white
+            z-index: 2
+            padding: 0 0 .3rem 0
+            transition: .2s ease
+            span
+              font-weight: bold
+              font-size: .9rem
+
+
+        .button
+          display: none
+
+    .columns-4
+      grid-template-columns: 1fr 1fr 1fr 1fr
+      @media only screen and (max-width: 700px)
+        grid-template-columns: 1fr 1fr 1fr
+      @media only screen and (max-width: 500px)
+        grid-template-columns: 1fr 1fr
+
+    .columns-5
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+      @media only screen and (max-width: 900px)
+        grid-template-columns: 1fr 1fr 1fr 1fr
+      @media only screen and (max-width: 700px)
+        grid-template-columns: 1fr 1fr 1fr
+      @media only screen and (max-width: 500px)
+        grid-template-columns: 1fr 1fr
+
+.sidebar-block
+  display: none

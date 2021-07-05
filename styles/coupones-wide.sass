@@ -1,0 +1,63 @@
+$base-grey: #F0F0F0
+$main-green: #A6FF00
+
+.coupones-wide
+  width: 96%
+  height: auto
+
+  display: flex
+  flex-direction: column
+  box-sizing: border-box
+  padding: 2rem
+  margin: 2rem auto
+  border: 2px solid $base-grey
+  border-radius: 10px
+  position: relative
+
+  .ad-logo
+    width: 160px
+    height: auto
+    margin: 0 auto
+    &:hover
+      box-shadow: none
+
+    img
+      width: 160px
+
+  .ad-head
+    font-size: 1.6rem
+    text-align: center
+    margin: 1.5rem auto 0 auto
+    font-weight: bold
+    @media only screen and (max-width: 800px)
+      font-size: 1.3rem
+
+  .ad-text
+    font-size: 1.2rem
+    text-align: center
+    margin: .5rem auto 1rem auto
+    opacity: .7
+    @media only screen and (max-width: 800px)
+      font-size: 1rem
+
+
+  .ad-button
+    font-size: .9rem
+    font-weight: bold
+    margin: 0 auto
+    background: #d7212e
+    text-decoration: none
+    color: white
+    padding: .5rem 1.5rem
+    border-radius: 10px
+    text-transform: uppercase
+    transition: .3s ease
+    &:hover
+      transform: scale(1.04)
+      box-shadow: none
+
+  .finehand
+    position: absolute
+    font-size: 3rem
+    top: -3rem
+    right: 1rem

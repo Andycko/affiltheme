@@ -1,0 +1,34 @@
+$light-grey: #dcdcdc
+$medium-grey: #8f8f8f
+
+.woocommerce-pagination
+  padding: 0
+  display: flex
+  margin: 2rem 0
+
+  .page-numbers
+    padding: 0
+    margin: 0 auto
+    display: flex
+    list-style-type: none
+
+    li
+      text-align: center
+
+
+      a
+        text-decoration: none
+        color: black
+        padding: .5rem
+        transition: .2s ease
+        &:hover
+          background: $light-grey
+
+      span
+        text-decoration: none
+        color: black
+        padding: .5rem
+        transition: .2s ease
+
+      .current
+        background: $light-grey
