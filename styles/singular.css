@@ -106,6 +106,7 @@
               max-width: 800px;
               grid-template-columns: 1fr; } }
           .article-wrapper .article-inner-wrap .article-left .article-leftmenu-wrap .article-leftmenu-inner .article-leftmenu-block {
+            max-height: 550px;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
             background: white;
             border-radius: 10px;
