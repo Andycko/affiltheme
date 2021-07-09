@@ -8,15 +8,114 @@
     align-items: center
     padding: 3rem 0
     box-sizing: border-box
-    margin-top: 4rem
+    margin-top: 4rem 
 
     .footer-inner
         width: calc(100% - 20px)
         max-width: 1200px
         margin: 0 10px
-        display: flex
-        flex: 1
-        flex-direction: column
+        display: grid
+        grid-template-columns: 1fr
+        grid-gap: 4rem
+
+        h1
+            font-size: 1.6rem
+            color: $main-color
+            margin: 0 0 1.5rem 0
+
+        .woo-footer
+            display: grid
+            grid-template-columns: 1fr
+            grid-gap: 2rem
+
+            .product-footer
+                display: grid
+                grid-template-columns: 1fr
+
+                .products
+                    margin: 0
+                    display: grid 
+                    grid-gap: 1.5rem
+                    padding: 0
+                    width: 100%
+                    list-style-type: none
+                    @media only screen and (max-width: 900px)
+                        grid-gap: 1rem
+                    @media only screen and (max-width: 700px)
+                        grid-gap: 1rem
+                    @media only screen and (max-width: 500px)
+                        grid-gap: .5rem
+
+                    .product-category
+                        img
+                            display: none
+
+                        mark
+                            display: none
+
+                    li
+                        position: relative
+                        border: 1px solid $light-grey
+                        box-sizing: border-box
+                        padding: 1rem
+                        transition: .2s ease
+                        &:hover
+                            box-shadow: 0 10px 30px rgba(0, 0, 0, .1)
+
+                        a
+                            width: 100%
+                            text-decoration: none
+                            color: black
+                            display: flex
+                            flex-direction: column
+                            text-align: center
+
+                        img
+                            width: 60%
+                            height: auto
+                            margin: auto
+
+                        h2
+                            padding: .5rem 0
+                            margin: 0
+                            font-size: 1rem
+                            font-weight: normal
+                            width: 100%
+                            background: white
+                            transition: .2s ease
+                            z-index: 2
+                            @media only screen and (max-width: 700px)
+                                font-size: .8rem
+
+                        .price
+                            width: 100%
+                            background: white
+                            z-index: 2
+                            padding: 0 0 .3rem 0
+                            transition: .2s ease
+                            span
+                            font-weight: bold
+                            font-size: .9rem
+
+    
+                        .button
+                            display: none
+
+                .columns-4
+                    grid-template-columns: 1fr 1fr 1fr 1fr
+                    @media only screen and (max-width: 700px)
+                        grid-template-columns: 1fr 1fr 1fr
+                    @media only screen and (max-width: 500px)
+                        grid-template-columns: 1fr 1fr
+
+                .columns-5
+                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+                    @media only screen and (max-width: 900px)
+                        grid-template-columns: 1fr 1fr 1fr 1fr
+                    @media only screen and (max-width: 700px)
+                        grid-template-columns: 1fr 1fr 1fr
+                    @media only screen and (max-width: 500px)
+                        grid-template-columns: 1fr 1fr
 
         .blog-footer
             display: grid
@@ -39,11 +138,6 @@
                             padding: 0 .5rem
                             box-sizing: border-box
 
-                h1
-                    font-size: 1.6rem
-                    color: $main-color
-                    margin: 0 0 1.5rem 0
-
             .categories
                 display: flex
 
@@ -52,7 +146,7 @@
                     flex-wrap: wrap
 
                     li
-                        margin: 1rem 0
+                        margin: 1rem
                         a
                             margin: 0 .5rem
                             box-shadow: inset 0 0 0 $main-color-4

@@ -2,6 +2,19 @@
 <footer class="footer">
     <div class="footer-inner">
 
+        <div class="woo-footer">
+
+            <section class="product-footer">
+                <h1>Najpopulárnejšie produkty</h1>
+                <?php echo do_shortcode("[products limit='5' columns='5' orderby='popularity' class='' ]"); ?>
+            </section>
+
+            <section class="product-footer">
+                <h1>Kategórie produktov</h1>
+                <?php echo do_shortcode("[product_categories number='0' parent='0']"); ?>
+            </section>
+        </div>  
+
         <div class="blog-footer">
             <section class="block categories">
                 <h1>Kategórie článkov</h1>
