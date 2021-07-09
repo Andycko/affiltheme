@@ -45,6 +45,9 @@ function load_css()
     wp_register_style('sidebar', get_template_directory_uri(). '/styles/sidebar.css', array(), rand(111,9999), 'all');
     wp_enqueue_style('sidebar');
 
+    wp_register_style('footer', get_template_directory_uri(). '/styles/footer.css', array(), rand(111,9999), 'all');
+    wp_enqueue_style('footer');
+
     wp_register_style('coupones', get_template_directory_uri(). '/styles/coupones-wide.css', array(), rand(111,9999), 'all');
     wp_enqueue_style('coupones');
 

@@ -1,9 +1,40 @@
 
 <footer class="footer">
+    <div class="footer-inner">
 
+        <div class="blog-footer">
+            <section class="block categories">
+                <h1>Kategórie článkov</h1>
+                <ul><?php wp_list_cats('sort_column=namonthly'); ?></ul>
+            </section>
+            <section class="block posts">
+                <h1>Články</h1>
+                <ul>
+                    <?php
+                        // Define our WP Query Parameters
+                        $the_query = new WP_Query( 'posts_per_page=8' );
+                        
+                        // Start our WP Query
+                        while ($the_query -> have_posts()) : $the_query -> the_post(); 
+                            // Display the Post Title with Hyperlink 
+                            ?>
 
-    <?php wp_footer();?>
+                            <div href="<?php the_permalink() ?>" class="article-leftmenu-block-post">
+                                <li><a href="<?php the_permalink() ?>"><div class="img-wrap"><?php echo get_the_post_thumbnail(); ?></div><span class="title"><?php the_title(); ?></span></a></li>
+                            </div> 
+
+                        <?php
+                            // Repeat the process and reset once it hits the limit
+                        endwhile;
+                        wp_reset_postdata();
+                    ?> 
+                </ul>
+            </section>
+        </div>
+
+    </div>   
 </footer>
+<?php wp_footer();?>
 
 <script>
 

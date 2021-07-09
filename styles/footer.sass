@@ -1,3 +1,98 @@
 @import "colors.sass"
 
 .footer
+    border-top: 2px solid $main-color-2
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 3rem 0
+    box-sizing: border-box
+    margin-top: 4rem
+
+    .footer-inner
+        width: calc(100% - 20px)
+        max-width: 1200px
+        margin: 0 10px
+        display: flex
+        flex: 1
+        flex-direction: column
+
+        .blog-footer
+            display: grid
+            grid-template-columns: 1fr
+            grid-gap: 2rem
+
+            .block
+                display: flex
+                flex-direction: column
+
+                ul
+                    padding: 0
+                    list-style: none
+                    margin: 0
+                    li
+                        a
+                            font-size: 1.2rem
+                            text-decoration: none
+                            color: black
+                            padding: 0 .5rem
+                            box-sizing: border-box
+
+                h1
+                    font-size: 1.6rem
+                    color: $main-color
+                    margin: 0 0 1.5rem 0
+
+            .categories
+                display: flex
+
+                ul
+                    display: flex
+                    flex-wrap: wrap
+
+                    li
+                        margin: 1rem 0
+                        a
+                            margin: 0 .5rem
+                            box-shadow: inset 0 0 0 $main-color-4
+                            transition: .2s ease
+                            &:hover
+                                box-shadow: inset 0 -0.9rem 0 $main-color-4
+
+            .posts
+
+                ul
+                    display: grid
+                    grid-gap: 1rem
+                    grid-template-columns: 1fr 1fr
+                    @media only screen and (max-width: 760px)
+                        grid-template-columns: 1fr
+
+                    li
+
+                        a
+                            padding: 1rem
+                            display: flex
+                            align-items: center
+                            border: 2px solid $main-color-2
+                            transition: .2s ease
+                            &:hover
+                                background: $main-color-2
+                            .img-wrap
+                                height: 100px
+                                width: 150px
+                                justify-content: center
+                                display: flex
+                                img
+                                    height: 100px!important
+                                    width: auto
+
+                            .title
+                                flex: 1
+                                padding: 0 1rem
+                                box-sizing: border-box
+                                    
+                            
+
+                    
