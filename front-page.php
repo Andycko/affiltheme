@@ -99,6 +99,27 @@
             </div>
         </div>
 
+        <div class="basic-fp-block">
+            <h2 class="fp-subheading">Náš blog</h2> 
+        </div>        
+
+        <?php
+            $postArr = array(111424, 108826, 109095);
+            //shuffle($postArr);
+
+            foreach ($postArr as $postIDrand) {
+                echo 
+                    '
+                    <a class="blog-block" href="'.get_permalink($postIDrand).'">
+                    <div class="img-wrap">'.get_the_post_thumbnail($postIDrand).'</div>
+                        <h2>'.get_the_title($postIDrand).'</h2>
+                        <button>Čítaj <i class="fas fa-arrow-right"></i></button>
+                    </a>
+                    '
+                ;
+            }
+            ?>
+
     </div>
 </main>
 
