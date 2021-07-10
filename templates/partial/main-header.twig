@@ -1,0 +1,34 @@
+<header class="main-header" >
+    {% block header %} 
+        <div class="header-inner">
+
+            <div class="main-header-logo">
+                <a href="/"> 
+                    {% include "partial/logo.twig" %}
+                </a>
+            </div>
+
+            <nav role="navigation" class="header-main-menu">  
+                {% include "menu.twig" with {'items': menuMain.get_items} %}
+            </nav> 
+
+            {{ function('do_shortcode', '[aws_search_form]') }}
+
+            <div class="header-right-options"> 
+
+                <div onclick="searchClick()" class="main-header-search">
+                    {% include "partial/icons/search-icon.twig" %}
+                    <span class="s-bread s-top"></span>
+                    <span class="s-bread s-bot"></span>
+                </div>
+
+                <div onclick="sandiwchClick()" class="sandwich">
+                    <span class="bread top"></span>
+                    <span class="bread bot"></span>
+                </div>
+
+            </div>
+
+        </div>
+    {% endblock %}
+</header>

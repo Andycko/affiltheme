@@ -6,6 +6,9 @@ html
 *
   scroll-margin-top: 4rem
 
+#cn-accept-cookie
+  background: $main-color!important 
+
 .main-header
   height: auto
   width: 100%
@@ -210,22 +213,24 @@ html
         @media only screen and (max-width: 1100px)
           background: $main-color-2
 
-          img
+          svg
             transform: scale(1.1)
 
-        img
+        svg
           width: 20px
           height: auto
 
           margin: auto
           transition: .2s ease
           opacity: 1
+          path 
+            fill: $main-color
 
         .s-bread
           width: 26px
           height: 2px
 
-          background: $medium-grey
+          background: $main-color
           position: absolute
           transition: .2s ease
           opacity: 0
@@ -260,7 +265,7 @@ html
           width: 26px
           height: 2px
 
-          background: $medium-grey
+          background: $main-color
           position: absolute
           transition: .3s ease
 
@@ -290,7 +295,6 @@ html
           width: 26px
           height: 2px
 
-          background: $medium-grey
           position: absolute
 
         .top
@@ -325,7 +329,7 @@ html
 
       .main-header-search
 
-        img
+        svg
           opacity: 0
 
         .s-bread

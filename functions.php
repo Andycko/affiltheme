@@ -1,21 +1,16 @@
 <?php
 
 //Menus
-register_nav_menus(
-    array(
-        'main-menu' => 'main-menu',
-        'top-cats-menu' => 'top-cats-menu',
-    )
-);
+
 
 //remove woo css
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
-function mytheme_add_woocommerce_support() {
+function theme_add_woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+add_action( 'after_setup_theme', 'theme_add_woocommerce_support' );
 
 //Add custom css
 function load_css()
@@ -55,10 +50,6 @@ function load_css()
 }
 add_action('wp_enqueue_scripts', 'load_css');
 
-function mytheme_post_thumbnails() {
-    add_theme_support( 'post-thumbnails' );
-}
-add_action( 'after_setup_theme', 'mytheme_post_thumbnails' );
 
 //lightbox
 
@@ -91,3 +82,157 @@ function reading_time() {
     $totalreadingtime = $readingtime . $timer;
     return $totalreadingtime;
 }
+ 
+function register_menus() { 
+    register_nav_menus( array(
+        'main-menu' => 'Main menu', 
+        'top-cats-menu' => 'top-cats-menu',
+    ) ); 
+} 
+
+//woo & timber compatibility stuff within tease-product.twig 
+function timber_set_product( $post ) {
+    global $product;
+
+    if ( is_woocommerce() ) {
+        $product = wc_get_product( $post->ID );
+    }
+}
+
+
+/**
+ * This ensures that Timber is loaded and available as a PHP class.
+ * If not, it gives an error message to help direct developers on where to activate
+ */
+if ( ! class_exists( 'Timber' ) ) {
+
+	add_action(
+		'admin_notices',
+		function() {
+			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
+		}
+	);
+
+	add_filter(
+		'template_include',
+		function( $template ) {
+			return get_stylesheet_directory() . '/static/no-timber.html';
+		}
+	);
+	return;
+}
+
+/**
+ * Sets the directories (inside your theme) to find .twig files
+ */
+Timber::$dirname = array( 'templates', 'views' );
+
+/**
+ * By default, Timber does NOT autoescape values. Want to enable Twig's autoescape?
+ * No prob! Just set this value to true
+ */
+Timber::$autoescape = false;
+
+
+/**
+ * We're going to configure our theme inside of a subclass of Timber\Site
+ * You can move this to its own file and include here via php's include("MySite.php")
+ */
+class AffilTheme extends Timber\Site {
+	/** Add timber support. */
+	public function __construct() {
+		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
+		//add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
+		add_action( 'init', array( $this, 'register_post_types' ) );
+		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		parent::__construct();
+	}
+
+    
+
+	/** This is where you can register custom post types. */
+	public function register_post_types() {
+
+	}
+	/** This is where you can register custom taxonomies. */
+	public function register_taxonomies() {
+
+	}
+
+	/** This is where you add some context
+	 *
+	 * @param string $context context['this'] Being the Twig's {{ this }}.
+	 */
+	public function add_to_context( $context ) {
+		$context['menuMain']  = new Timber\Menu('main-menu');
+		$context['topCatsMenu']  = new Timber\Menu('top-cats-menu');
+		$context['archives'] = new TimberArchives( $args );
+		$context['site']  = $this;
+		$context['featured'] = new Timber\PostQuery(array(
+            'post_type' => 'post',
+            'posts_per_page' => 8,
+        ));
+		$context['threeLatestPosts'] = new Timber\PostQuery(array(
+            'post_type' => 'post',
+            'posts_per_page' => 3, 
+        ));
+		return $context;
+	}
+
+	public function theme_supports() {
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
+
+		/*
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
+		add_theme_support( 'title-tag' );
+
+		/*
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
+		add_theme_support( 'post-thumbnails' );
+
+		/*
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
+		add_theme_support( 
+			'html5',
+			array(
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
+
+		/*
+		 * Enable support for Post Formats.
+		 *
+		 * See: https://codex.wordpress.org/Post_Formats
+		 */
+		add_theme_support(
+			'post-formats',
+			array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+				'gallery',
+				'audio',
+			)
+		);
+
+		add_theme_support( 'menus' );
+	}
+}
+
+new AffilTheme();

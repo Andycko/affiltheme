@@ -1,0 +1,129 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<main class="front-page-wrap">
+
+    <div class="front-page-inner">
+
+        <h1 class="fp-heading">{{function('the_title')}}</h1>
+
+        <div class="top-slider slideshow-container">
+  
+            <div class="slider-block mySlides fade">
+                <a class="link" href="#"></a>
+                <picture>
+                    <source media="(max-width:700px)" srcset="">
+                    <img src="" alt=" " style="width:100%">
+                </picture>
+            </div>
+
+            <a class="slider-button prev" onclick="plusSlides(-1)">
+                <span class="arrow"> 
+                    <span class="arrow-line arrow-top"></span>
+                    <span class="arrow-line arrow-bot"></span>
+                </span>
+            </a> 
+            <a class="slider-button next" onclick="plusSlides(1)"> 
+                <span class="arrow">
+                    <span class="arrow-line arrow-top"></span>
+                    <span class="arrow-line arrow-bot"></span> 
+                </span>
+            </a> 
+
+        </div>
+
+        <div class="top-kategorie">
+            {% include "partial/reusable/fp-subheading.twig" with 
+                {
+                    subHeading:'Top kategórie'
+                }
+            %}
+            <nav role="navigation" class="top-kategorie">  
+                {% include "menu.twig" with {'items': topCatsMenu.get_items} %}
+            </nav> 
+        </div> 
+        
+        {% include "partial/reusable/big-cat-block.twig" with
+            {
+                blockBg:'ddd',
+                smallText:'ddd',
+                largeText:'ddd',
+                btnLink:'ddd',
+                btnText:'ddd',
+                imgSrc:'ddd',
+                imgAlt:'ddd'
+            }
+        %}
+
+        {% include "partial/reusable/three-cat-block.twig" with
+            {
+                link:'ddd',
+                smallText:'ddd',
+                largeText:'ddd',
+                imgSrc:'ddd',
+                imgAlt:'ddd',
+
+                link2:'ddd',
+                smallText2:'ddd',
+                largeText2:'ddd',
+                imgSrc2:'ddd',
+                imgAlt2:'ddd',
+ 
+                link3:'ddd',
+                smallText3:'ddd',
+                largeText3:'ddd',
+                imgSrc3:'ddd',
+                imgAlt3:'ddd',
+            }
+        %}
+
+        {% include "partial/reusable/two-cat-block.twig" with
+            {
+                link:'ddd',
+                smallText:'ddd',
+                largeText:'ddd',
+                imgSrc:'ddd',
+                imgAlt:'ddd',
+
+                link2:'ddd',
+                smallText2:'ddd',
+                largeText2:'ddd',
+                imgSrc2:'ddd',
+                imgAlt2:'ddd',
+            }
+        %}
+
+        {% include "partial/reusable/fp-subheading.twig" with 
+            {
+                subHeading:'Náš blog'
+            }
+        %} 
+
+        {% for post in threeLatestPosts %}
+            <div class="article-leftmenu-block-post">
+                <li><a href="{{ post.link }}"><div class="img-wrap">{{ function('get_the_post_thumbnail') }}</div><span class="title">{{ post.title }}</span></a></li>
+            </div> 
+        {% endfor %}
+
+         <div class="basic-fp-block">
+
+            {% include "partial/reusable/fp-subheading.twig" with 
+                {
+                    subHeading:'Náš blog'
+                }
+            %} 
+
+        </div>
+
+        {% include "partial/reusable/three-latest-posts.twig" %}
+
+
+        
+
+    </div>
+
+</main>
+
+{% endblock %}
+

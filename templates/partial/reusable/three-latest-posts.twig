@@ -1,0 +1,7 @@
+{% for post in threeLatestPosts %}
+    <a class="blog-block" href="{{ post.link }}">
+        <div class="img-wrap">{{ function('get_the_post_thumbnail') }}</div>
+        <h2>{{ post.title }}</h2>
+    <button>Čítaj <i class="fas fa-arrow-right"></i></button>
+    </a>
+{% endfor %}
