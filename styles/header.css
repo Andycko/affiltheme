@@ -61,7 +61,7 @@ html {
   display: flex;
 }
 
-.main-header .header-inner .main-header-logo a img {
+.main-header .header-inner .main-header-logo a img, .main-header .header-inner .main-header-logo a svg {
   height: 100%;
   width: auto;
   margin: auto auto auto 0;
