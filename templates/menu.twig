@@ -1,9 +1,17 @@
 {% if menuMain %}
-	<ul id="menu-main-menu" class="menu sub-menu">
+	<ul id="menu-main-menu" class="menu">
 	{% for item in items %}
 		<li class="{{ item.classes | join(' ') }}">
 			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "menu.twig" with {'items': item.children} %}
+			{% if item.children %}
+                    <ul class="menu sub-menu">
+                        {% for child in item.children %}
+                            <li class="nav-drop-item">
+                                <a href="{{ child.link }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
 		</li>
 	{% endfor %}
 	</ul> 
