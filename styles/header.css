@@ -379,8 +379,8 @@ html {
 
 .main-header .header-inner .header-main-menu ul li > .sub-menu li > .sub-menu {
   position: absolute;
-  left: calc(100% + 1rem);
-  top: -1rem;
+  left: calc(100% + .7rem);
+  top: -0.7rem;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: .2s ease;
