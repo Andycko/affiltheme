@@ -14,6 +14,10 @@
   background: #EACBD5;
 }
 
+.front-page-wrap .front-page-inner .fp-heading {
+  color: #B95073;
+}
+
 .front-page-wrap .front-page-inner .fp-subheading {
   color: #B95073;
 }
@@ -321,9 +325,9 @@ html {
   position: absolute;
   top: 100%;
   height: auto;
-  padding: 1rem;
+  padding: .7rem;
   border: 1px solid #F1DCE3;
-  width: 220px;
+  width: 240px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   opacity: 0;
