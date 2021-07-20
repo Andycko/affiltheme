@@ -9,19 +9,20 @@
 
         <section class="product-footer"> 
             <h1>Kategórie produktov</h1>
-            {{ function('do_shortcode', '[product_categories number="" parent="1"]') }}
+            {{ function('do_shortcode', '[product_categories number="" parent="0"]') }}
         </section>
 
     </div>  
 
     <div class="blog-footer">
-
-        <section class="block categories">
-            <h1>Kategórie článkov</h1>
-            <ul>{{ function('wp_list_cats', 'sort_column=namonthly') }}</ul>
-        </section> 
-
+ 
         {% if posts %}
+
+            <section class="block categories">
+                <h1>Kategórie článkov</h1>
+                <ul>{{ function('wp_list_cats', 'sort_column=namonthly') }}</ul>
+            </section> 
+
             <section class="block posts">
                 <h1>Články</h1>
                 <ul class = "featured-posts-list">
@@ -32,6 +33,7 @@
                     {% endfor %}
                 </ul>
             </section>
+            
         {% else %}
 
         {% endif %}
