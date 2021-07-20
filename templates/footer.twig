@@ -7,21 +7,21 @@
             {{ function('do_shortcode', '[products limit="5" columns="5" orderby="popularity" ]') }}
         </section>
 
-        <section class="product-footer">
+        <section class="product-footer"> 
             <h1>Kategórie produktov</h1>
             {{ function('do_shortcode', '[product_categories number="" parent="0"]') }}
         </section>
 
-    </div>
+    </div>  
 
     <div class="blog-footer">
-
-        {% if get_post %}
+ 
+        {% if posts %}
 
             <section class="block categories">
                 <h1>Kategórie článkov</h1>
                 <ul>{{ function('wp_list_cats', 'sort_column=namonthly') }}</ul>
-            </section>
+            </section> 
 
             <section class="block posts">
                 <h1>Články</h1>
@@ -29,18 +29,19 @@
                     {% for post in featured %}
                         <div class="article-leftmenu-block-post">
                             <li><a href="{{ post.link }}"><div class="img-wrap">{{ function('get_the_post_thumbnail') }}</div><span class="title">{{ post.title }}</span></a></li>
-                        </div>
+                        </div> 
                     {% endfor %}
                 </ul>
             </section>
-
+            
         {% else %}
 
         {% endif %}
 
+        
 
+    </div> 
 
-    </div>
+</div>   
 
-</div>
-
+ 
