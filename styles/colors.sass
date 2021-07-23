@@ -278,6 +278,52 @@ body
     color: $main-color
     box-shadow: inset 0 0 0 $main-color-4
     &:hover
-      box-shadow: inset 0 -0.9rem 0 $main-color-4                            
+      box-shadow: inset 0 -0.9rem 0 $main-color-4      
+
+
+// index 
+
+@import "colors.sass"
+
+.main-page-blog-top
+  background: $base-grey
+
+  .main-page-blog-top-inner
+
+    .main-page-blog-top-head
+      color: $main-color
+
+.page-blog-post-block
+  border: 2px solid rgba(0,0,0,0)
+  &:hover
+    border: 2px solid $main-color
+    background: $main-color
+
+.page-blog-post-block-text-head
+  color: $main-color
+
+@media only screen and (max-width: 600px)
+
+  .page-blog-post-block-img
+    border: 2px solid $base-grey
+
+  .page-blog-post-block-text
+    border: 2px solid $base-grey
+
+.nav-links
+  border: 1px solid #808080
+  color: #808080 !important
+
+  a
+    color: #808080 !important
+
+  .next
+    border-left: 1px solid #808080
+
+  .page-numbers
+    border-left: 1px solid #808080
+
+    &:hover
+      background-color: rgba(128, 128, 128, 0.2)
 
                     
