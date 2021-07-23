@@ -723,7 +723,6 @@
 
 .article-wrapper .article-inner-wrap .article-left .article-leftmenu-wrap .article-leftmenu-inner .article-leftmenu-block li a {
   text-decoration: none;
-  color: black;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transition: .2s ease;
@@ -758,7 +757,6 @@
 .article-content {
   max-width: 750px;
   margin: 20px auto;
-  color: #808080;
   font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
