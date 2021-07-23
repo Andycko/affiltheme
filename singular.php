@@ -84,13 +84,8 @@
 
                 <?php the_content(); ?>
 
-                <?php get_template_part('template-parts/mailchimp-form'); ?>
-
-                <?php get_template_part('template-parts/author-bio'); ?>
-
                 <?php // echo do_shortcode('[wpdevart_facebook_comment  order_type="social" title_text_font_famely="monospace" width="100%" bg_color="#d4d4d4" animation_effect="random" count_of_comments="3" ]'); ?>
 
-                <?php include('template-parts/coupones-wide.php'); ?>
 
             </div>
 
