@@ -46,20 +46,22 @@ function load_css()
     wp_register_style('coupones', get_template_directory_uri(). '/styles/coupones-wide.css', array(), rand(111,9999), 'all');
     wp_enqueue_style('coupones');
 
-	wp_register_style('colors', get_template_directory_uri(). '/styles/colors.css', array(), rand(111,9999), 'all');
-    wp_enqueue_style('colors'); 
-
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/styles/colors.css', array(), rand(111,9999), 'all' );
+	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/styles/colors.css', array(), );
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/styles/colors.css', array('parent-style') );
+
+	$parent_style = 'parent-style'; 
+
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style',
+        get_stylesheet_directory_uri() . '/style.css',
+        array( $parent_style ),
+        wp_get_theme()->get('Version')
+    ); 
 
 
 }
 add_action('wp_enqueue_scripts', 'load_css');
-
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles', 11 );
-function my_theme_enqueue_styles() {
-    wp_enqueue_style( 'child-style', get_stylesheet_uri() );
-}  
+ 
 
 
 //lightbox
