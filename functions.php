@@ -51,10 +51,13 @@ function load_css()
 
 }
 add_action('wp_enqueue_scripts', 'load_css');
- 
-add_action( 'wp_enqueue_scripts', function() { 
-	wp_enqueue_style( 'colors', get_template_directory_uri() . '/styles/colors.css' );
-});
+
+ // this will remove the stylesheet when init fires
+ add_action('admin_init','your_remove_default_stylesheets');
+ // this is your function to deregister the default admin stylesheet
+ function your_remove_default_stylesheets() {
+ wp_deregister_style('wp-admin');
+ }
 
 //lightbox
 
