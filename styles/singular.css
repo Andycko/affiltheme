@@ -509,6 +509,22 @@
           flex-direction: column;
 }
 
+.article-content .simpletoc ul {
+  padding-left: 1rem !important;
+}
+
+.article-content .simpletoc ul ul {
+  padding-left: 2rem !important;
+}
+
+.article-content .simpletoc ul ul ul {
+  padding-left: 3rem !important;
+}
+
+.article-content .simpletoc ul ul ul ul {
+  padding-left: 4rem !important;
+}
+
 .article-content p {
   line-height: 2.1rem;
   font-size: 1.2rem;
