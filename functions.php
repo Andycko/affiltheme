@@ -52,13 +52,6 @@ function load_css()
 }
 add_action('wp_enqueue_scripts', 'load_css');
 
- // this will remove the stylesheet when init fires
- add_action('admin_init','your_remove_default_stylesheets');
- // this is your function to deregister the default admin stylesheet
- function your_remove_default_stylesheets() {
- wp_deregister_style('wp-admin');
- }
-
 //lightbox
 
 add_action( 'after_setup_theme', 'themename_setup' );
