@@ -46,8 +46,9 @@ function load_css()
     wp_register_style('coupones', get_template_directory_uri(). '/styles/coupones-wide.css', array(), rand(111,9999), 'all');
     wp_enqueue_style('coupones');
 
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/styles/colors.css', array(), );
+	
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/styles/colors.css', array('parent-style') );
+	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/styles/colors.css', array(), );
 
 }
 add_action('wp_enqueue_scripts', 'load_css');
