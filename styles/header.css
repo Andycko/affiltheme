@@ -47,6 +47,12 @@ body {
   position: relative;
 }
 
+@media only screen and (min-width: 1101px) {
+  .main-header .header-inner {
+    justify-items: center;
+  }
+}
+
 .main-header .header-inner .main-header-logo {
   height: 36px;
   width: auto;
@@ -54,6 +60,12 @@ body {
   padding: 6px 6px 6px 0;
   background: white;
   z-index: 1100;
+}
+
+@media only screen and (min-width: 1101px) {
+  .main-header .header-inner .main-header-logo {
+    margin: 0 2rem 0 0;
+  }
 }
 
 .main-header .header-inner .main-header-logo a {
@@ -251,6 +263,14 @@ body {
   visibility: hidden;
   height: 40px;
   position: absolute;
+}
+
+@media only screen and (min-width: 1101px) {
+  .main-header .header-inner .aws-container {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
 }
 
 .main-header .header-inner .aws-container form {
