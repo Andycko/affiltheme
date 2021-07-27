@@ -22,13 +22,19 @@
   color: #B95073;
 }
 
-.front-page-wrap .front-page-inner .top-kategorie .top-kategorie ul li a {
-  color: #B95073;
+.front-page-wrap .front-page-inner .top-kategorie .top-kategorie ul li {
   border: 2px solid #F1DCE3;
 }
 
-.front-page-wrap .front-page-inner .top-kategorie .top-kategorie ul li a:hover {
+.front-page-wrap .front-page-inner .top-kategorie .top-kategorie ul li:hover {
   background: #F1DCE3;
+}
+
+.front-page-wrap .front-page-inner .top-kategorie .top-kategorie ul li a {
+  color: #B95073;
+}
+
+.front-page-wrap .front-page-inner .top-kategorie .top-kategorie ul li a:hover {
   color: #B95073;
 }
 
