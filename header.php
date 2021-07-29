@@ -12,4 +12,4 @@
  */
 
 $GLOBALS['timberContext'] = Timber::context();
-ob_start();
+ob_start(); 
