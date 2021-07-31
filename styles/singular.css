@@ -200,7 +200,6 @@
 }
 
 .article-wrapper .article-inner-wrap .article-left .article-leftmenu-wrap .article-leftmenu-inner .article-leftmenu-block {
-  max-height: 550px;
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
   background: white;
@@ -224,6 +223,12 @@
 
 .article-wrapper .article-inner-wrap .article-left .article-leftmenu-wrap .article-leftmenu-inner .article-leftmenu-block:hover {
   opacity: 1;
+}
+
+@media only screen and (min-width: 1201px) {
+  .article-wrapper .article-inner-wrap .article-left .article-leftmenu-wrap .article-leftmenu-inner .article-leftmenu-block {
+    max-height: 550px;
+  }
 }
 
 @media only screen and (max-width: 1200px) {

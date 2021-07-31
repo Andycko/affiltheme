@@ -109,7 +109,6 @@
 
 
           .article-leftmenu-block
-            max-height: 550px
             box-shadow: 0 0 30px rgba(0, 0, 0, .15)
             background: white
             border-radius: 10px
@@ -123,6 +122,8 @@
             transition: .3s ease
             &:hover
               opacity: 1
+            @media only screen and (min-width: 1201px)
+              max-height: 550px
             @media only screen and (max-width: 1200px)
               opacity: 1
               flex-wrap: wrap
