@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+
+
+<div class="main-page-blog-top">
+
+    <div class="main-page-blog-top-inner">
+        {% if post.the_post_thumbnail %}
+            <div class="main-page-blog-top-img">
+                <img src="{{post.thumbnail.src}}" />
+            </div>
+        {% endif %}
+        <h1 class="main-page-blog-top-head">{{function('single_post_title')}}</h1>
+    </div>
+ 
+</div> 
+
+{% include "partial/blog-post-list.twig" %}
+ 
+
+
+{% endblock %}
+

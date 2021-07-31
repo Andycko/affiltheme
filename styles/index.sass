@@ -3,13 +3,13 @@
   display: flex
 
   .main-page-blog-top-inner
-    display: grid
-    grid-template-columns: 1fr 1fr
+    display: flex
     width: calc(100% - 20px)
     max-width: 1100px
     margin: 5rem auto 2rem auto
+    padding: 2rem 0
     @media only screen and (max-width: 1100px)
-      grid-template-columns: 1fr
+      flex-direction: column
       grid-gap: 1rem
 
     .main-page-blog-top-img
@@ -23,6 +23,7 @@
     .main-page-blog-top-head
       margin: auto auto auto 0
       font-size: 4rem
+      flex: 1
       @media only screen and (max-width: 1100px)
         text-align: center
         font-size: 3rem
