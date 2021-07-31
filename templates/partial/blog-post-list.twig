@@ -20,12 +20,7 @@
         <div class="sidebar-block">
 
             <h2 class="sidebar-head"><i class="fas fa-hashtag"></i>Značky</h2>
-            <ul class="sidebar-ul">
-                {% for term in post.terms('tags') %}
-                    <li><a href="{{term.link}}">{{term.name}}</a></li>
-                {% endfor %}
-            </ul>
-            
+            <ul class="sidebar-ul"> {{function('get_the_tags')}} </ul>
 
         </div>
 
