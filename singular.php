@@ -84,8 +84,17 @@
 
                 <?php the_content(); ?>
 
-                <?php // echo do_shortcode('[wpdevart_facebook_comment  order_type="social" title_text_font_famely="monospace" width="100%" bg_color="#d4d4d4" animation_effect="random" count_of_comments="3" ]'); ?>
+                <?php $tags = get_tags(); ?> 
+                <section class="tags-wrap"> 
 
+                    <h1 class="tags-heading font-main-c"><i class="fas fa-hashtag"></i>Značky</h1>
+
+                    <div class="tags">
+                        <?php foreach ( $tags as $tag ) { ?>
+                            <a href="<?php echo get_tag_link( $tag->term_id ); ?> " rel="tag"><?php echo $tag->name; ?></a>
+                        <?php } ?> 
+                    </div>
+                </section>  
 
             </div>
 
