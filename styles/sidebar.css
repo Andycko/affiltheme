@@ -38,7 +38,7 @@
   padding: 0;
 }
 
-.main-page-blog-inner-right .sidebar-ul li {
+.main-page-blog-inner-right .sidebar-ul li, .main-page-blog-inner-right .sidebar-ul a {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
