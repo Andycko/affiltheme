@@ -1,0 +1,29 @@
+<div class="main-page-blog-inner">
+
+    <div class="main-page-blog-inner-block main-page-blog-inner-left">
+
+        {% for post in posts %}
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        {% endfor %} 
+
+    </div>
+
+    <aside class="main-page-blog-inner-block main-page-blog-inner-right">
+
+        <div class="sidebar-block">
+
+            <h2 class="sidebar-head"><i class="fas fa-th-large"></i>Kategórie</h2>
+            <ul class="sidebar-ul"> {{function('wp_list_cats')}} </ul>
+
+        </div>
+
+        <div class="sidebar-block">
+
+            <h2 class="sidebar-head"><i class="fas fa-hashtag"></i>Značky</h2>
+            <ul class="sidebar-ul"> {{function('get_the_tag_list')}} </ul>
+
+        </div>
+
+    </aside>
+ 
+</div>
