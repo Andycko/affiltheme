@@ -1,0 +1,23 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+	<a href="{{post.link}}" class="page-blog-post-block">
+
+        {% if post.get_thumbnail %}
+            <div class="page-blog-post-block-img">
+                <img src="{{post.thumbnail.src}}" />
+            </div>
+        {% endif %}
+
+        <div class="page-blog-post-block-text">
+
+            <h2 class="page-blog-post-block-text-head"><{{post.title}}</h2>
+
+            <span class="page-blog-post-block-text-info">Publikované {{ post.date }}  -  {{ function('reading_time') }} čítania</span>
+ 
+            <p>{{post.preview}}</p> 
+
+        </div>
+
+    </a>
+{% endblock %}

@@ -31,22 +31,23 @@
     padding: 0
 
     li
-      margin: .7rem 5%
-      position: relative
-      width: 90%
+      width: 100%
+      display: flex
 
     a
+      margin: .5rem 5%
+      position: relative
+      width: 90%
       z-index: 2
       color: #808080
       text-decoration: none
-      font-size: .9rem
+      font-size: 1rem
       line-height: 1.3rem
       width: 100%
       transition: .3s ease
       cursor: pointer !important
-
-    li:hover a
-      color: black
+      &:hover
+        color: black!important
 
 @media only screen and (max-width: 1000px)
   .main-page-blog-inner-right
