@@ -647,8 +647,8 @@
 }
 
 .article-content .tags-wrap .tags a {
-  margin-right: 2rem;
-  font-size: 1.5rem;
+  margin: 1rem 2rem 1rem 0;
+  font-size: 1.2rem;
 }
 
 .article-content .half img {
