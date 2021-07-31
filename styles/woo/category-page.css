@@ -107,6 +107,7 @@
   padding: 1rem;
   -webkit-transition: .2s ease;
   transition: .2s ease;
+  background: white;
 }
 
 .content-area .site-main .products li:hover {
