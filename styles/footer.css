@@ -194,6 +194,28 @@
   }
 }
 
+.footer .footer-inner .woo-footer .product-cats ul li {
+  padding: 0 !important;
+  height: 100% !important;
+}
+
+.footer .footer-inner .woo-footer .product-cats ul li a {
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer .footer-inner .woo-footer .product-cats ul li a img {
+  display: none;
+}
+
 .footer .footer-inner .blog-footer {
   display: -ms-grid;
   display: grid;
