@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<main class="tag-page-wrap"> 
+
+    <div class="tag-page-inner">
+
+        <div class="tag-page-top archives-top" >
+
+            <h1 class="tag-heading archives-heading article-content">{{function('single_cat_title')}}</h1>
+            <div class="tag-description article-content">{{function('tag_description')}}</div>
+
+        </div>       
+ 
+    </div>
+
+    {% include "partial/blog-post-list.twig" %}
+ 
+</main>
+
+{% endblock %}
+
