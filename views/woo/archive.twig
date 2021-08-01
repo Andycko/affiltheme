@@ -1,0 +1,40 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+    {% do action('woocommerce_before_main_content') %}
+
+    <section class="woocommerce-products-header">
+
+        <h1 class="font-main-c">{{ function('woocommerce_page_title') }}<h1>
+
+
+
+            {% do action('woocommerce_archive_description') %}
+
+
+    
+    </section>
+
+    {{ function('do_shortcode', '[product_categories parent="1"]') }}
+
+    <ul class="loop products columns-5">
+        {% for post in parent %} 
+            {% include ["partials/tease-product.twig"] %}
+        {% endfor %}
+    </ul>
+
+    <div class="before-shop-loop">
+        {% do action('woocommerce_before_shop_loop') %}
+    </div>
+
+    <ul class="loop products columns-5">
+        {% for post in products %} 
+            {% include ["partials/tease-product.twig"] %}
+        {% endfor %}
+    </ul>
+
+    {% do action('woocommerce_after_shop_loop') %}
+    {% do action('woocommerce_after_main_content') %}
+
+{% endblock  %}

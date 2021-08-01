@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {% do action('woocommerce_before_single_product') %}
+
+
+
+
+
+                {% do action('woocommerce_before_main_content') %} 
+
+                <div class="product type-product">
+
+                    <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images">
+                        <figure class="woocommerce-product-gallery__wrapper">
+                            <div class="woocommerce-product-gallery__image">
+                                {% do action('woocommerce_before_single_product_summary') %}
+                            </div>
+                        </figure>
+                    </div>
+
+                    <div class="summary entry-summary">
+                        {% do action('woocommerce_single_product_summary') %}
+                    </div>
+
+                    {% do action('woocommerce_after_single_product_summary') %}
+
+                    <meta itemprop="url" content="{{ post.link }}" />
+
+
+
+
+
+{% endblock  %} 
