@@ -241,3 +241,32 @@ class AffilTheme extends Timber\Site {
 }
 
 new AffilTheme();
+
+add_action('woocommerce_before_shop_loop', 'display_sub_subcategories', 10 );
+function display_sub_subcategories() {
+    $obj      = get_queried_object();
+    $taxonomy = 'product_cat';
+
+    if ( is_a($obj, 'WP_Term') && $taxonomy === $obj->taxonomy && 0 != $obj->parent ) {
+        // Get sub-subcategories of the current subcategory
+        $terms = get_terms([
+            'taxonomy'    => $taxonomy,
+            'hide_empty'  => true,
+            'parent'      => $obj->term_id
+        ]);
+
+        if ( ! empty($terms) ) :
+
+        $output = '<ul class="subcategories-list">';
+
+        // Loop through product subcategories WP_Term Objects
+        foreach ( $terms as $term ) {
+            $term_link = get_term_link( $term, $taxonomy );
+
+            $output .= '<li class="'. $term->slug .'"><a href="'. $term_link .'">'. $term->name .'</a></li>';
+        }
+
+        echo $output . '</ul>';
+        endif;
+    }
+} 
